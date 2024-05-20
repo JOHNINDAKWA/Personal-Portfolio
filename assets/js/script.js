@@ -216,3 +216,15 @@ window.onload = function() {
       setInterval(setDate, 1000);
    
   }
+
+  
+// notification toast variables
+const notificationToast = document.querySelector('[data-toast]');
+const toastCloseBtn = document.querySelector('[data-toast-close]');
+
+// notification toast eventListener
+toastCloseBtn.addEventListener('click', function () {
+  notificationToast.classList.add('closed');
+});
+
+
