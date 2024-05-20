@@ -583,6 +583,10 @@ main {
   font-weight: var(--fw-3);
   line-height: 1.6;
 }
+
+
+
+
 /**
  * #testimonials 
  */
@@ -889,6 +893,17 @@ main {
  }
  
 
+ .skill-progress-fill {
+  background: var(--text-gradient-yellow);
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  transition: width 2s ease-in-out;
+}
+
+.skill-progress-fill.active {
+  width: var(--target-width);
+}
  /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -1050,6 +1065,175 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+
+
+
+/*-----------------------------------*\
+ clock
+\*-----------------------------------*/
+
+.clock{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #EAE5E0;
+  margin: 20px auto 0px auto;
+  position: relative;
+  border:20px solid #D7CCC8;
+
+}
+.center{
+  background-color: #000;
+  position: absolute;
+  left: calc(50% - 10px);
+  top:  calc(50% - 10px);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  z-index: 20;
+}
+.hourHand{
+  width: 10px;
+  height: 75px;
+  background-color: #000;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 56px;
+  left: 125px;
+  z-index: 10;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform: rotate(360deg);
+
+}
+.minuteHand{
+  width: 5px;
+  height: 110px;
+  background-color: #000;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 20px;
+  left: 128px;
+  z-index: 9;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform: rotate(90deg);
+
+}
+.secondHand{
+  width: 2px;
+  height: 120px;
+  background-color:red;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  position: absolute;
+  top: 16px;
+  left: 130px;
+  transition: all 0.06s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  z-index: 8;  
+    transform: rotate(360deg);
+
+}
+.time{
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  border: 1px solid #fff8dc;
+  background-color: #fff;
+  /* padding: 2px; */
+  display: block;
+  box-shadow: inset 0px 2px 5px rgba(0,0,0,.4);
+  border-radius: 5px;
+  min-width: 80px;
+  height: 25px;
+
+}
+.time small{
+  color:red;
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.clock ul{
+  list-style: none;
+  padding: 0;
+
+}
+.clock ul li{
+  position: absolute;
+  width:20px;
+  height:20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+  color:red;
+}
+.clock ul li:nth-child(1){
+  right: 22%;
+  top:6.5%;
+}
+.clock ul li:nth-child(2){
+  right: 6%;
+  top:25%;
+}
+.clock ul li:nth-child(3){
+  right: 1%;
+  top:calc(50% - 10px);
+  color:#000;
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(4){
+  right: 6%;
+  top:69%;
+}
+.clock ul li:nth-child(5){
+  right: 22%;
+  top:84%;
+}
+.clock ul li:nth-child(6){
+  right: calc(50% - 10px);
+  top:calc(99% - 20px);
+  color:#000;
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(7){
+  left: 22%;
+  top:84%;
+}
+.clock ul li:nth-child(8){
+  left: 6%;
+  top:69%;
+}
+.clock ul li:nth-child(9){
+  left: 1%;
+  top:calc(50% - 10px);
+  color:#000;
+  font-size: 20px;
+  font-weight: bold;
+}
+.clock ul li:nth-child(10){
+  left: 6%;
+  top:25%;
+}
+.clock ul li:nth-child(11){
+  left: 22%;
+  top:6.5%;
+}
+.clock ul li:nth-child(12){
+  right: calc(50% - 10px);
+  top:1%;
+  color:#000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+
+
 
 
 /*-----------------------------------*\
@@ -1624,12 +1808,158 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+  .collapse-content {
+    width: 90%;
+    margin: auto;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  
+
+.contact-social{
+
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   line-height: 1.6;
+   margin-top: 2rem;
+
+}
+   
+  .collapse-content {
+    width: 80vw;
+    margin: auto;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .collapse {
+    background: #ffffff;
+    /* border-radius: 10px; */
+    color: #000000;
+  }
+  
+  .collapse a {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    color: #000000;
+    position: relative;
+    /* border-radius: 10px; */
+  }
+
+
+  
+  .collapse a.instagram {
+    background: linear-gradient(to right, #F77737, #BC2A8D, #FCCC63);
+  }
+  
+  .collapse a.twitter {
+    background: #000;
+    color: #fff;
+
+  }
+  .collapse a.whatsapp {
+   
+    background: linear-gradient(to right, #25D366, #9DE0AD);
+
+  }
+  .collapse a.dribbble {
+    background: linear-gradient(to right, #25D366, #9DE0AD);
+
+  }
+  
+  .collapse a.youtube {
+    background: #ff0000;
+  }
+
+  .collapse a.facebook {
+    background: linear-gradient(to right, #0253bc, #A0CFFF);
+  }
+
+  .collapse a.linkedin {
+    background: linear-gradient(to right, #0077B5, #fff, #E0E7FF);
+
+  }
+
+  .collapse a.gmail {
+    background: linear-gradient(to right, #f2a60c, #fff);
+
+
+    color: #000;
+
+
+  }
+
+
+  .collapse a.github{
+    background: linear-gradient(to right, #fff, #000);
+    color: #1e1e1e;
+
+  }
+  .content a{
+    color: #1DA1F2;
+     text-decoration: none; 
+     font-weight: bold;
+     font-size: larger;
+     display: flex;
+     align-items: center;
+     gap: 4px;
+     text-align: start;
+     padding: 0;
+  }
+
+  .collapse a:before {
+    content: "";
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+  }
+  
+  .inner-content {
+    padding: 1.8rem;
+  }
+  
+  .content {
+    max-height: 0em;
+    transition: 0.3s linear 0s;
+    overflow: hidden;
+  }
+  
+  .collapse + .collapse a {
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+  }
+  
+
+  
+  .collapse:target .content {
+    max-height: 15em;
+  }
+  
+  .collapse:target a:before {
+    transform: rotate(-90deg);
+  }
+  
+
+
 
 /**
  * responsive larger than 768px screen
  */
 
  @media (min-width: 768px) {
+
+
+  .collapse-content {
+    width: 35vw;
+    margin: auto;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+
 
   /**
    * REUSED STYLE
