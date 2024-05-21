@@ -1994,12 +1994,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .collapse a.linkedin {
-    background: linear-gradient(to right, #0077B5, #fff, #E0E7FF);
+    background: linear-gradient(to right, #0077B5, #010101, #E0E7FF);
 
   }
 
   .collapse a.gmail {
-    background: linear-gradient(to right, #f2a60c, #fff);
+    background: linear-gradient(to right, #f2a60c, #141414);
 
 
     color: #000;
@@ -2009,7 +2009,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   .collapse a.github{
-    background: linear-gradient(to right, #fff, #000);
+    background: linear-gradient(to right, #717171, #000);
     color: #1e1e1e;
 
   }
