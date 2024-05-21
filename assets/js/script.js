@@ -2,7 +2,6 @@
 
 
 
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
@@ -137,6 +136,28 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
+function copyText() {
+  const textToCopy = document.getElementById('textToCopy').innerText;
+
+  // Create a temporary textarea element
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+  document.body.appendChild(textarea);
+
+  // Select the text in the textarea and copy it to the clipboard
+  textarea.select();
+  document.execCommand('copy');
+
+  // Remove the temporary textarea
+  document.body.removeChild(textarea);
+
+  // Notify the user
+  alert('Certificate number copied to clipboard! Now click verify.');
+}
+
+
+
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -150,6 +171,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
+        // Store scroll position in sessionStorage
+        sessionStorage.setItem("scrollPosition", window.scrollY);
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -158,6 +181,15 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Restore scroll position when the page is loaded
+window.addEventListener("load", function() {
+    var scrollPosition = sessionStorage.getItem("scrollPosition");
+    if (scrollPosition !== null) {
+        window.scrollTo(0, scrollPosition);
+        sessionStorage.removeItem("scrollPosition"); 
+    }
+});
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -170,11 +202,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const percentage = fill.getAttribute('data-percentage');
         fill.style.setProperty('--target-width', `${percentage}%`);
         fill.classList.add('active');
-        observer.unobserve(fill); // Optionally stop observing after animation
+        observer.unobserve(fill); 
       }
     });
   }, {
-    threshold: 0.1 // Adjust this value as needed
+    threshold: 0.5 
   });
 
   skills.forEach(skill => {
