@@ -379,18 +379,18 @@ article.active {
 }
 
 .call-me-btn {
-  background-color: #f06595;
+  background-color: #a77004;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: 5px;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .call-me-btn:hover {
-  background-color: #a3033b;
+  background-color: #442e02
 }
 
 .display-flex{
@@ -2118,7 +2118,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .modal-avatar-box img { width: 80px; }
 
-
+  .call-me-btn {
+    padding: 6px 11px;
+    font-size: 0.6rem;
+  }
 
   /**
    * PORTFOLIO
