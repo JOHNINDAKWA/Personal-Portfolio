@@ -238,7 +238,7 @@ window.onload = function() {
           minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
   
           const hour = today.getHours();
-          const hourDeg = ((hour / 10 ) * 360 ); 
+          const hourDeg = ((hour / 12 ) * 360 ); 
           hourHand.style.transform = `rotate(${hourDeg}deg)`;
           
           time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + ' : ' + '<small>' + second +'</small>'+ '</span>';
