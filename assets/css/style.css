@@ -2326,7 +2326,7 @@ textarea.form-input::-webkit-resizer { display: none; }
       transform: translateY(0);
     }
     100% {
-      transform: translateY(calc(100vh - 110%));
+      transform: translateY(calc(100vh - 117%));
     }
   }
 
