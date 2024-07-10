@@ -2295,7 +2295,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * SIDEBAR
    */
 
-  .sidebar {
+   .sidebar {
     position: sticky;
     top: 60px;
     max-height: max-content;
@@ -2303,6 +2303,16 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
+    animation: sidebarAnimation 7s ease-in-out infinite alternate; 
+  }
+  
+  @keyframes sidebarAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(100vh - 110%));
+    }
   }
 
   .sidebar-info { flex-direction: column; }
