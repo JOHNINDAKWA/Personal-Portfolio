@@ -913,36 +913,51 @@ main {
  * #clients 
  */
 
- .clients { margin-top: 65px;}
+.clients {
+  margin-top: 65px;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
 
- .clients-list {
-   display: flex;
-   justify-content: flex-start;
-   align-items: flex-start;
-   gap: 15px;
-   margin: 0 -15px;
-   padding: 25px;
-   padding-bottom: 25px;
-   overflow-x: auto;
-   scroll-behavior: smooth;
-   overscroll-behavior-inline: contain;
-   scroll-snap-type: inline mandatory;
-   scroll-padding-inline: 25px;
- }
- 
- .clients-item {
-   min-width: 50%;
-   scroll-snap-align: start;
- }
- 
- .clients-item img {
-   width: 100%;
-   filter: grayscale(1);
-   transition: var(--transition-1);
- }
- 
- .clients-item img:hover { filter: grayscale(0); }
- 
+.clients-wrapper {
+  display: flex;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  width: 100%;
+}
+
+.clients-list {
+  display: flex;
+  gap: 15px;
+  padding: 25px 0;
+  margin: 0;
+  animation: scroll 30s linear infinite; /* Adjust animation duration as needed */
+}
+
+.clients-item {
+  flex: 0 0 auto;
+  width: 60px; 
+  overflow: hidden; 
+}
+
+.clients-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  filter: grayscale(1);
+  transition: var(--transition-1);
+}
+
+.clients-item img:hover {
+  filter: grayscale(0);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 7)); /* Adjust calculation based on number of items */
+  }
+}
+
  /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
