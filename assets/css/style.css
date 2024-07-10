@@ -276,20 +276,26 @@ article.active {
   }
 }
 
- .has-scrollbar::-webkit-scrollbar-track {
+.has-scrollbar::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
   /* background: var(--onyx); */
   border-radius: 5px;
   outline: 1px solid var(--onyx);
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--text-gradient-yellow);
+  background: rgb(27, 250, 7);
   border-radius: 5px;
   border: 2px solid var(--border-gradient-onyx);
 }
 
-.has-scrollbar::-webkit-scrollbar-button { width: 20px; } 
-
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
  .content-card {
   position: relative;
   background: var(--border-gradient-onyx);
